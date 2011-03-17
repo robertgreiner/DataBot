@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataBot">
+  <DataContextMoniker Name="/DataBotDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7192eb70-2e26-48ba-a9ac-d0cc01fe5235" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DataBotDataContext/City" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d36cae9a-2d4e-40c5-860a-b7427d7aa4de" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="686117e2-78da-4515-8fda-11082d442d25" absoluteBounds="0.75, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DataBotDataContext/Street" />
+      <nestedChildShapes>
+        <elementListCompartment Id="129d714d-7c45-4340-8813-e8187b9580ec" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="31f48995-f39c-42c9-ac92-5e4e1ce6a259" absoluteBounds="3.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DataBotDataContext/FirstName" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d732edba-6d70-428f-817c-02857726e3a6" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e8af23cc-82ed-4fcf-91b8-1dda666e1c41" absoluteBounds="3.75, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DataBotDataContext/LastName" />
+      <nestedChildShapes>
+        <elementListCompartment Id="478fb6af-56ec-4580-9315-8c4c77bdc9f4" absoluteBounds="3.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a13dce57-1548-4f46-a946-7dd0d8b2234c" absoluteBounds="0.75, 4.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DataBotDataContext/State" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e590754-07c5-496b-844b-a31f3b1bd1ec" absoluteBounds="0.765, 5.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
