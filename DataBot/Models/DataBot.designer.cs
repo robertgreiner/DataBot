@@ -23,7 +23,7 @@ namespace DataBot.Models
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DataBot")]
-	public partial class DataBotDataContext : System.Data.Linq.DataContext
+	public partial class DataBotContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -47,31 +47,31 @@ namespace DataBot.Models
     partial void DeleteState(State instance);
     #endregion
 		
-		public DataBotDataContext() : 
+		public DataBotContext() : 
 				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DataBotConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataBotDataContext(string connection) : 
+		public DataBotContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataBotDataContext(System.Data.IDbConnection connection) : 
+		public DataBotContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataBotDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DataBotContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataBotDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DataBotContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();

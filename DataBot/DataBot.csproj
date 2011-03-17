@@ -67,6 +67,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataBot.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\DataBotRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
