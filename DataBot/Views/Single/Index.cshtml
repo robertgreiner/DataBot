@@ -1,0 +1,51 @@
+﻿@model DataBot.Models.RandomDataRow
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<fieldset>
+    <legend>RandomDataRow</legend>
+
+    <div class="display-label">FirstName</div>
+    <div class="display-field">@Model.FirstName</div>
+
+    <div class="display-label">LastName</div>
+    <div class="display-field">@Model.LastName</div>
+
+    <div class="display-label">City</div>
+    <div class="display-field">@Model.City</div>
+
+    <div class="display-label">State</div>
+    <div class="display-field">@Model.State</div>
+
+    <div class="display-label">StreetName</div>
+    <div class="display-field">@Model.StreetName</div>
+
+    <div class="display-label">StreetNumber</div>
+    <div class="display-field">@Model.StreetNumber</div>
+
+    <div class="display-label">ApartmentNumber</div>
+    <div class="display-field">@Model.ApartmentNumber</div>
+
+    <div class="display-label">ZipCode</div>
+    <div class="display-field">@Model.ZipCode</div>
+
+    <div class="display-label">PhoneNumber</div>
+    <div class="display-field">@Model.PhoneNumber</div>
+
+    <div class="display-label">BirthYear</div>
+    <div class="display-field">@Model.BirthYear</div>
+
+    <div class="display-label">BirthMonth</div>
+    <div class="display-field">@Model.BirthMonth</div>
+
+    <div class="display-label">BirthDay</div>
+    <div class="display-field">@Model.BirthDay</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Generate New Entry", "Index")
+</p>
+
