@@ -1,6 +1,91 @@
-﻿@{
-    ViewBag.Title = "DataBot";
+﻿@model IEnumerable<DataBot.Models.RandomDataRow>
+
+@{
+    ViewBag.Title = "Index";
 }
 
-<h2>DataBot</h2>
-@ViewBag.FirstName
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>
+            FirstName
+        </th>
+        <th>
+            LastName
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            State
+        </th>
+        <th>
+            StreetName
+        </th>
+        <th>
+            StreetNumber
+        </th>
+        <th>
+            ApartmentNumber
+        </th>
+        <th>
+            ZipCode
+        </th>
+        <th>
+            PhoneNumber
+        </th>
+        <th>
+            BirthYear
+        </th>
+        <th>
+            BirthMonth
+        </th>
+        <th>
+            BirthDay
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.FirstName
+        </td>
+        <td>
+            @item.LastName
+        </td>
+        <td>
+            @item.City
+        </td>
+        <td>
+            @item.State
+        </td>
+        <td>
+            @item.StreetName
+        </td>
+        <td>
+            @item.StreetNumber
+        </td>
+        <td>
+            @item.ApartmentNumber
+        </td>
+        <td>
+            @item.ZipCode
+        </td>
+        <td>
+            @item.PhoneNumber
+        </td>
+        <td>
+            @item.BirthYear
+        </td>
+        <td>
+            @item.BirthMonth
+        </td>
+        <td>
+            @item.BirthDay
+        </td>
+    </tr>
+}
+
+</table>
+

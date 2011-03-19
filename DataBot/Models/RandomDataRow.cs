@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Linq.Mapping;
+using System.Text;
 
 namespace DataBot.Models {
     public class RandomDataRow {
@@ -88,9 +89,13 @@ namespace DataBot.Models {
                 return new Random().Next(10000, 99999);
             }
         }
-        public int PhoneNumber {
+        public string PhoneNumber {
             get {
-                return (new Random().Next(100, 999) * 10000000) + (5550000) + (new Random().Next(1000, 9999));
+                StringBuilder phoneNumber = new StringBuilder();
+                phoneNumber.Append(new Random().Next(100, 999));
+                phoneNumber.Append("555");
+                phoneNumber.Append(new Random().Next(1000, 9999));
+                return phoneNumber.ToString();
             }
         }
         public int BirthYear {

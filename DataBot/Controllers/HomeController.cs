@@ -14,7 +14,11 @@ namespace DataBot.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            List<RandomDataRow> randomDataRows = new List<RandomDataRow>();
+            for (int x = 0; x < 25; x++) {
+                randomDataRows.Add(new RandomDataRow());
+            }
+            return View(randomDataRows);
         }
 
     }
