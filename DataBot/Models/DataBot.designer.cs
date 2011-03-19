@@ -23,7 +23,7 @@ namespace DataBot.Models
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DataBot")]
-	public partial class DataBotContext : System.Data.Linq.DataContext
+	public partial class DataBotDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -33,9 +33,9 @@ namespace DataBot.Models
     partial void InsertCity(City instance);
     partial void UpdateCity(City instance);
     partial void DeleteCity(City instance);
-    partial void InsertStreet(Street instance);
-    partial void UpdateStreet(Street instance);
-    partial void DeleteStreet(Street instance);
+    partial void InsertStreetName(StreetName instance);
+    partial void UpdateStreetName(StreetName instance);
+    partial void DeleteStreetName(StreetName instance);
     partial void InsertFirstName(FirstName instance);
     partial void UpdateFirstName(FirstName instance);
     partial void DeleteFirstName(FirstName instance);
@@ -47,31 +47,31 @@ namespace DataBot.Models
     partial void DeleteState(State instance);
     #endregion
 		
-		public DataBotContext() : 
+		public DataBotDataContext() : 
 				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DataBotConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataBotContext(string connection) : 
+		public DataBotDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataBotContext(System.Data.IDbConnection connection) : 
+		public DataBotDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataBotContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DataBotDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataBotContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DataBotDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -85,11 +85,11 @@ namespace DataBot.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<Street> Streets
+		public System.Data.Linq.Table<StreetName> StreetNames
 		{
 			get
 			{
-				return this.GetTable<Street>();
+				return this.GetTable<StreetName>();
 			}
 		}
 		
@@ -205,7 +205,7 @@ namespace DataBot.Models
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.street")]
-	public partial class Street : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class StreetName : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -224,7 +224,7 @@ namespace DataBot.Models
     partial void OnValueChanged();
     #endregion
 		
-		public Street()
+		public StreetName()
 		{
 			OnCreated();
 		}

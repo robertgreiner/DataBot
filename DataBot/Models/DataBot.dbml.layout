@@ -9,7 +9,7 @@
       </nestedChildShapes>
     </classShape>
     <classShape Id="686117e2-78da-4515-8fda-11082d442d25" absoluteBounds="0.75, 2.75, 2, 1.1939925130208335">
-      <DataClassMoniker Name="/DataBotDataContext/Street" />
+      <DataClassMoniker Name="/DataBotDataContext/StreetName" />
       <nestedChildShapes>
         <elementListCompartment Id="129d714d-7c45-4340-8813-e8187b9580ec" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>

@@ -6,8 +6,8 @@
       <Column Name="value" Member="Value" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.street" Member="Streets">
-    <Type Name="Street">
+  <Table Name="dbo.street" Member="StreetNames">
+    <Type Name="StreetName">
       <Column Name="id" Member="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="value" Member="Value" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
