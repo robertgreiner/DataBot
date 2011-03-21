@@ -1,87 +1,126 @@
 ﻿@model IEnumerable<DataBot.Models.RandomDataRow>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Random Data Generator";
 }
+<h2>Random Data Generator</h2>
 
-<h2>Index</h2>
+<script type="text/javascript">
+    $(document).ready(function () {
 
+        updatePreview();
+
+        $('.columnType').click(updatePreview);
+
+        function updatePreview() {
+            var column = "";
+            $("input:checked").each(function () {
+                column = $(this).val();
+                $('.' + column).show();
+            });
+            $('input[type=checkbox]').not(':checked').each(function () {
+                column = $(this).val();
+                $('.' + column).hide();
+            });
+        }
+    });
+</script>
+
+<fieldset>
+    <legend>Column Types</legend>
+    <ol>
+        <li><label for="firstName">First Name</label><input id="firstName" value="firstName" type="checkbox" checked="checked" class="columnType" /></li>
+        <li><label for="lastName">Last Name</label><input id="lastName" value="lastName" type="checkbox" checked="checked" class="columnType" /></li>
+        <li><label for="city">City</label><input id="city" value="city" type="checkbox" checked="checked" class="columnType" /></li>
+        <li><label for="state">State</label><input id="state" value="state" type="checkbox" checked="checked" class="columnType" /></li>
+        <li><label for="zipCode">Zip</label><input id="zipCode" value="zipCode" type="checkbox" checked="checked" class="columnType" /></li>
+        <li><label for="streetNumber">Street Number</label><input id="streetNumber" value="streetNumber" type="checkbox" class="columnType" /></li>
+        <li><label for="apartmentNumber">Apartment Number</label><input id="apartmentNumber" value="apartmentNumber" type="checkbox" class="columnType" /></li>
+        <li><label for="streetName">Street Name</label><input id="streetName" value="streetName" type="checkbox" class="columnType" /></li>
+        <li><label for="phoneNumber">Phone Number</label><input id="phoneNumber" value="phoneNumber" type="checkbox" class="columnType" /></li>
+        <li><label for="birthMonth">Birth Month</label><input id="birthMonth" value="birthMonth" type="checkbox" class="columnType" /></li>
+        <li><label for="birthYear">Birth Year</label><input id="birthYear" value="birthYear" type="checkbox" class="columnType" /></li>
+        <li><label for="birthDay">Birth Day</label><input id="birthDay" value="birthDay" type="checkbox" class="columnType" /></li>
+    </ol>
+</fieldset>
+
+<h3>Sample Row</h3>
 <table>
     <tr>
-        <th>
+        <th class="firstName">
             FirstName
         </th>
-        <th>
+        <th class="lastName">
             LastName
         </th>
-        <th>
+        <th class="city">
             City
         </th>
-        <th>
+        <th class="state">
             State
         </th>
-        <th>
+        <th class="streetName">
             StreetName
         </th>
-        <th>
+        <th class="streetNumber">
             StreetNumber
         </th>
-        <th>
+        <th class="apartmentNumber">
             ApartmentNumber
         </th>
-        <th>
+        <th class="zipCode">
             ZipCode
         </th>
-        <th>
+        <th class="phoneNumber">
             PhoneNumber
         </th>
-        <th>
+        <th class="birthYear">
             BirthYear
         </th>
-        <th>
+        <th class="birthMonth">
             BirthMonth
         </th>
-        <th>
+        <th class="birthDay">
             BirthDay
         </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td class="firstName">
             @item.FirstName
         </td>
-        <td>
+        <td class="lastName">
             @item.LastName
         </td>
-        <td>
+        <td class="city">
             @item.City
         </td>
-        <td>
+        <td class="state">
             @item.State
         </td>
-        <td>
+        <td class="streetName">
             @item.StreetName
         </td>
-        <td>
+        <td class="streetNumber">
             @item.StreetNumber
         </td>
-        <td>
+        <td class="apartmentNumber">
             @item.ApartmentNumber
         </td>
-        <td>
+        <td class="zipCode">
             @item.ZipCode
         </td>
-        <td>
+        <td class="phoneNumber">
             @item.PhoneNumber
         </td>
-        <td>
+        <td class="birthYear">
             @item.BirthYear
         </td>
-        <td>
+        <td class="birthMonth">
             @item.BirthMonth
         </td>
-        <td>
+        <td class="birthDay">
             @item.BirthDay
         </td>
     </tr>

@@ -10,16 +10,27 @@ body
 -----------------------------------------------------------*/
 
 fieldset 
-{
+{    
+    float: left;    
+    clear: left;    
+    width: 100%;    
     border:1px solid #ddd;
     padding:0 1.4em 1.4em 1.4em;
     margin:0 0 1.5em 0;
+
 }
 
 legend 
 {
     font-size:1.2em;
     font-weight: bold;
+}
+
+label 
+{
+    float: left;    
+    width: 10em;    
+    margin-right: 1em; 
 }
 
 textarea 
@@ -37,6 +48,15 @@ textarea
     margin:0.5em 0 0 0;
 }
 
+fieldset ol 
+{  
+    padding: 1em 1em 0 1em;  
+    list-style: none;  
+}  
+
+fieldset li {  
+    padding-bottom: 1em;  
+}  
 
 /* Styles for validation helpers
 -----------------------------------------------------------*/
