@@ -1,111 +1,38 @@
-body
-{
-    font-size: 75%;
-    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
-    color: #232323;
-    background-color: #fff;
-}
+body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, blockquote { margin: 0px; padding: 0px; border: 0px; }
+body { background: #EEEEEE url(/Content/images/bgHatch.png) repeat; font-family: Arial, Helvetica, sans-serif; margin: 0px auto;	width: 800px; }
+a { color: #7DC1D5; text-decoration: none; outline: none; }
+a:hover { color: #277C94; }
+p { color: #277C94; font-size: 12px; line-height: 18px; }
+h1 { color: #094455; font-size: 26px; margin: 0px 0px 15px 0px; font-weight: bold; }
+h2 { color: #094455; font-size: 22px; margin: 0px 0px 10px 0px; }
+h3 { color: #3BA1B6; font-size: 16px; line-height: 28px; font-style: oblique; margin-bottom: 10px; }
+br { clear: both; }
+table { font-family: Arial, Helvetica, sans-serif; color: #646464; font-size: 10px; width: 100%; }
+table td { height: 20px; font-weight: bold; text-align: center; background-color: #F3F8FE; }
+table th { height: 20px; font-size: 10px; color: #FFFFFF; }
+table tr.th { background: #565656;  color: #FFFFFF; }
+fieldset { float: left; clear: left; width: 100%; border: 1px solid #DDDDDD; padding: 0px 0px 10px 10px; margin: 0px 0px 11px 0px; }
+legend { font-size: 10px; font-weight: bold; }
+label { float: left; width: 150px; margin-right: 10px; }
+fieldset ol { padding: 15px 15px 0px 15px; list-style: none; }  
+fieldset li { padding-bottom: 10px; }  
 
-table{
-	font-family: Arial, Helvetica, sans-serif;
-	color: #646464;
-	font-size: 10px;
-	width: 100%;
-}
-table td{
-	height: 20px;
-	font-weight: bold; 
-	text-align: center;
-	background-color: #F3F8FE;
-}
-table th{
-	height: 20px;
-	font-size: 10px;
-	color: #FFFFFF;
-}
-table tr.th{
-	background: #565656 ; 
-	color: #FFFFFF;
-}
+img.float_left { margin: 0px 10px 5px 0px; }
+img.float_right { margin: 0px 0px 5px 10px; }
 
+.clear { clear: both; }
+		
+.box245 { width: 245px; float: left; }
+.box800 { width: 900px; float: left; margin: 0px 30px 30px 0px; }
+.float_left { float: left; }
+.float_right { float: right; }
 
-/* Styles for basic forms
------------------------------------------------------------*/
+#header { height: 150px; padding: 30px 0px; }
+.logo { float: left; background: url(/Content/images/logo.png) no-repeat; width: 750px; height: 150px; text-indent: -9999px; }
+#main { width: 800px; margin-top: 20px; float: left; }
+#footer { width: 800px; margin: 15px auto 10px 0px; text-align: center; font-size: 10px; }
 
-fieldset 
-{    
-    float: left;    
-    clear: left;    
-    width: 100%;    
-    border:1px solid #ddd;
-    padding:0 1.4em 1.4em 1.4em;
-    margin:0 0 1.5em 0;
-
-}
-
-legend 
-{
-    font-size:1.2em;
-    font-weight: bold;
-}
-
-label 
-{
-    float: left;    
-    width: 10em;    
-    margin-right: 1em; 
-}
-
-textarea 
-{
-    min-height: 75px;
-}
-
-.editor-label 
-{
-    margin: 1em 0 0 0;
-}
-
-.editor-field 
-{
-    margin:0.5em 0 0 0;
-}
-
-fieldset ol 
-{  
-    padding: 1em 1em 0 1em;  
-    list-style: none;  
-}  
-
-fieldset li {  
-    padding-bottom: 1em;  
-}  
-
-/* Styles for validation helpers
------------------------------------------------------------*/
-.field-validation-error
-{
-    color: #ff0000;
-}
-
-.field-validation-valid
-{
-    display: none;
-}
-
-.input-validation-error
-{
-    border: 1px solid #ff0000;
-    background-color: #ffeeee;
-}
-
-.validation-summary-errors
-{
-    font-weight: bold;
-    color: #ff0000;
-}
-
-.validation-summary-valid
-{
-    display: none;
-}
+#twitter_update_list { font-size: 12px; color: #277c94; }
+#twitter_update_list li { list-style: none; margin-bottom: 20px; line-height: 18px; }
+#twitter_update_list span a { display: inline; padding: 0px; }
+#twitter_update_list a { display:block; padding-top: 5px; }

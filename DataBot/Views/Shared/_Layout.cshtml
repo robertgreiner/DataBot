@@ -4,9 +4,37 @@
     <title>@ViewBag.Title</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
     <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+    <!--[if IE 7]>
+	<link href="@Url.Content("~/Content/ie7fix.css")" rel="stylesheet" type="text/css" />
+	<![endif]-->
+    <script src="@Url.Content("~/Scripts/cufon-yui.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/custom.font.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+    	Cufon.replace('h1, h2, .dash_title, .digit')
+	</script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-10287519-11']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
 </head>
 
 <body>
-    @RenderBody()
+    <div id="header">
+	    <div class="logo">DataBot</div>
+    </div>
+    <div id="main">
+        @RenderBody()
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        Created by <a href="http://creatingcode.com">Robert Greiner</a>.
+        Source available on <a href="https://github.com/robertgreiner/DataBot">Github</a>.
+    </div>
 </body>
 </html>

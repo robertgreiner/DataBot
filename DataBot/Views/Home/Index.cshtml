@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Random Data Generator";
 }
-<h2>Random Data Generator</h2>
+<h1>Random Data Generator</h1>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -28,23 +28,29 @@
 
 <fieldset>
     <legend>Column Types</legend>
-    <ol>
+    <ol class="float_left">
         <li><label for="firstName">First Name</label><input id="firstName" value="firstName" type="checkbox" checked="checked" class="columnType" /></li>
         <li><label for="lastName">Last Name</label><input id="lastName" value="lastName" type="checkbox" checked="checked" class="columnType" /></li>
+        <li><label for="phoneNumber">Phone Number</label><input id="phoneNumber" value="phoneNumber" type="checkbox" class="columnType" /></li>
+        <li><label for="birthMonth">Birth Month</label><input id="birthMonth" value="birthMonth" type="checkbox" class="columnType" /></li>
+        
+    </ol>
+    <ol class="float_left">
         <li><label for="city">City</label><input id="city" value="city" type="checkbox" checked="checked" class="columnType" /></li>
         <li><label for="state">State</label><input id="state" value="state" type="checkbox" checked="checked" class="columnType" /></li>
         <li><label for="zipCode">Zip</label><input id="zipCode" value="zipCode" type="checkbox" checked="checked" class="columnType" /></li>
+        <li><label for="birthDay">Birth Day</label><input id="birthDay" value="birthDay" type="checkbox" class="columnType" /></li>
+    </ol>
+    <ol class="float_left">
         <li><label for="streetNumber">Street Number</label><input id="streetNumber" value="streetNumber" type="checkbox" class="columnType" /></li>
         <li><label for="apartmentNumber">Apartment Number</label><input id="apartmentNumber" value="apartmentNumber" type="checkbox" class="columnType" /></li>
         <li><label for="streetName">Street Name</label><input id="streetName" value="streetName" type="checkbox" class="columnType" /></li>
-        <li><label for="phoneNumber">Phone Number</label><input id="phoneNumber" value="phoneNumber" type="checkbox" class="columnType" /></li>
-        <li><label for="birthMonth">Birth Month</label><input id="birthMonth" value="birthMonth" type="checkbox" class="columnType" /></li>
         <li><label for="birthYear">Birth Year</label><input id="birthYear" value="birthYear" type="checkbox" class="columnType" /></li>
-        <li><label for="birthDay">Birth Day</label><input id="birthDay" value="birthDay" type="checkbox" class="columnType" /></li>
     </ol>
+    <div class="clear"></div>
 </fieldset>
 
-<h3>Sample Rows</h3>
+<h2>Sample Rows</h2>
 <table style="width: 99%; background-color: rgb(209, 209, 209);">
     <tr class="th">
         <th class="firstName">
