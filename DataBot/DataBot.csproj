@@ -73,6 +73,10 @@
   <ItemGroup>
     <Content Include="Content\ie7fix.css" />
     <Content Include="Content\images\bgHatch.png" />
+    <Content Include="Content\images\export_csv.png" />
+    <Content Include="Content\images\export_sql.png" />
+    <Content Include="Content\images\export_xml.png" />
+    <Content Include="Content\images\logo.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\cufon-yui.js" />
@@ -115,6 +119,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\ViewPage1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
