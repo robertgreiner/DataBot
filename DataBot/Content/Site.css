@@ -24,11 +24,15 @@ img.float_right { margin: 0px 0px 5px 10px; }
 		
 .box245 { width: 245px; float: left; }
 .box800 { width: 900px; float: left; margin: 0px 30px 30px 0px; }
-.float_left { float: left; }
+.float_left { float: left; margin: 0px 25px 0px 25px; }
 .float_right { float: right; }
 
 #header { height: 150px; padding: 30px 0px; }
 .logo { float: left; background: url(/Content/images/logo.png) no-repeat; width: 750px; height: 150px; text-indent: -9999px; }
+#export { width: 620px; height: 60px; margin: 20px auto; }
+.export_csv { background: url(/Content/images/export_csv.png) no-repeat; width: 184px; height: 54px; float: left; margin-left: 30px; }
+.export_xml { background: url(/Content/images/export_xml.png) no-repeat; width: 184px; height: 54px; float: left; margin-left: 30px; }
+.export_sql { background: url(/Content/images/export_sql.png) no-repeat; width: 184px; height: 54px; float: left; }
 #main { width: 800px; margin-top: 20px; float: left; }
 #footer { width: 800px; margin: 15px auto 10px 0px; text-align: center; font-size: 10px; }
 
