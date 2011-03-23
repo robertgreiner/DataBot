@@ -26,37 +26,40 @@
     });
 </script>
 
-<fieldset>
-    <legend>Add or Remove Columns</legend>
-    <ol class="float_left">
-        <li><label for="firstName">First Name</label><input id="firstName" value="firstName" type="checkbox" checked="checked" class="columnType" /></li>
-        <li><label for="lastName">Last Name</label><input id="lastName" value="lastName" type="checkbox" checked="checked" class="columnType" /></li>
-        <li><label for="phoneNumber">Phone Number</label><input id="phoneNumber" value="phoneNumber" type="checkbox" class="columnType" /></li>
-        <li><label for="birthMonth">Birth Month</label><input id="birthMonth" value="birthMonth" type="checkbox" class="columnType" /></li>
+@using (Html.BeginForm(FormMethod.Post)) {
+    <fieldset>
+        <legend>Add or Remove Columns</legend>
+        <ol class="float_left">
+            <li><label for="firstName">First Name</label><input id="firstName" name="firstName" type="checkbox" checked="checked" class="columnType" /></li>
+            <li><label for="lastName">Last Name</label><input id="lastName" name="lastName" type="checkbox" checked="checked" class="columnType" /></li>
+            <li><label for="phoneNumber">Phone Number</label><input id="phoneNumber" name="phoneNumber" type="checkbox" class="columnType" /></li>
+            <li><label for="birthMonth">Birth Month</label><input id="birthMonth" name="birthMonth" type="checkbox" class="columnType" /></li>
         
-    </ol>
-    <ol class="float_left">
-        <li><label for="city">City</label><input id="city" value="city" type="checkbox" checked="checked" class="columnType" /></li>
-        <li><label for="state">State</label><input id="state" value="state" type="checkbox" checked="checked" class="columnType" /></li>
-        <li><label for="zipCode">Zip</label><input id="zipCode" value="zipCode" type="checkbox" checked="checked" class="columnType" /></li>
-        <li><label for="birthDay">Birth Day</label><input id="birthDay" value="birthDay" type="checkbox" class="columnType" /></li>
-    </ol>
-    <ol class="float_left">
-        <li><label for="streetNumber">Street Number</label><input id="streetNumber" value="streetNumber" type="checkbox" class="columnType" /></li>
-        <li><label for="apartmentNumber">Apartment Number</label><input id="apartmentNumber" value="apartmentNumber" type="checkbox" class="columnType" /></li>
-        <li><label for="streetName">Street Name</label><input id="streetName" value="streetName" type="checkbox" class="columnType" /></li>
-        <li><label for="birthYear">Birth Year</label><input id="birthYear" value="birthYear" type="checkbox" class="columnType" /></li>
-    </ol>
-    <div class="clear"></div>
-</fieldset>
-
-<div class="clear"></div>
-<div id="export"">
-    <a href="@Url.Action("SQL", "Export")"><img class="export_sql" src="@Url.Content("~/Content/images/export_sql.png")" alt="Export to SQL" /></a>
-    <a href="@Url.Action("CSV", "Export")"><img class="export_csv" src="@Url.Content("~/Content/images/export_csv.png")" alt="Export to CSV" /></a>
-    <a href="@Url.Action("XML", "Export")"><img class="export_xml" src="@Url.Content("~/Content/images/export_xml.png")" alt="Export to XML" /></a>
-</div>
-<div class="clear"></div>
+        </ol>
+        <ol class="float_left">
+            <li><label for="city">City</label><input id="city" name="city" type="checkbox" checked="checked" class="columnType" /></li>
+            <li><label for="state">State</label><input id="state" name="state" type="checkbox" checked="checked" class="columnType" /></li>
+            <li><label for="zipCode">Zip</label><input id="zipCode" name="zipCode" type="checkbox" checked="checked" class="columnType" /></li>
+            <li><label for="birthDay">Birth Day</label><input id="birthDay" name="birthDay" type="checkbox" class="columnType" /></li>
+        </ol>
+        <ol class="float_left">
+            <li><label for="streetNumber">Street Number</label><input id="streetNumber" name="streetNumber" type="checkbox" class="columnType" /></li>
+            <li><label for="apartmentNumber">Apartment Number</label><input id="apartmentNumber" name="apartmentNumber" type="checkbox" class="columnType" /></li>
+            <li><label for="streetName">Street Name</label><input id="streetName" name="streetName" type="checkbox" class="columnType" /></li>
+            <li><label for="birthYear">Birth Year</label><input id="birthYear" name="birthYear" type="checkbox" class="columnType" /></li>
+        </ol>
+        <div class="clear"></div>
+        <div style="width: 370px; margin: 5px auto;">
+            <label for="numRows" class="rows">Number of rows to export </label><input type="text" id="numRows" name="numRows" maxlength="4" />
+        </div>
+        <div class="clear"></div>
+    </fieldset>
+    <div id="export">
+        <button type="submit" class="export_sql" value="SQL" name="export">Export to SQL</button>
+        <button type="submit" class="export_csv" value="CSV" name="export">Export to CSV</button>
+        <button type="submit" class="export_xml" value="XML" name="export">Export to XML</button>
+    </div>
+}
 
 <h2>Sample Rows</h2>
 <table style="width: 99%; background-color: rgb(209, 209, 209);">
