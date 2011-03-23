@@ -52,9 +52,9 @@
 
 <div class="clear"></div>
 <div id="export"">
-    <img class="export_sql" src="@Url.Content("~/Content/images/export_sql.png")" alt="Export to SQL" />
-    <img class="export_csv" src="@Url.Content("~/Content/images/export_csv.png")" alt="Export to CSV" />
-    <img class="export_xml" src="@Url.Content("~/Content/images/export_xml.png")" alt="Export to XML" />
+    <a href="@Url.Action("SQL", "Export")"><img class="export_sql" src="@Url.Content("~/Content/images/export_sql.png")" alt="Export to SQL" /></a>
+    <a href="@Url.Action("CSV", "Export")"><img class="export_csv" src="@Url.Content("~/Content/images/export_csv.png")" alt="Export to CSV" /></a>
+    <a href="@Url.Action("XML", "Export")"><img class="export_xml" src="@Url.Content("~/Content/images/export_xml.png")" alt="Export to XML" /></a>
 </div>
 <div class="clear"></div>
 
