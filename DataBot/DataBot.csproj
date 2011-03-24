@@ -62,12 +62,30 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ColumnNames.cs" />
+    <Compile Include="Models\PartialContext.cs" />
+    <Compile Include="Models\ColumnTypes\ApartmentNumberColumn.cs" />
+    <Compile Include="Models\ColumnTypes\BirthDayColumn.cs" />
+    <Compile Include="Models\ColumnTypes\BirthMonthColumn.cs" />
+    <Compile Include="Models\ColumnTypes\BirthYearColumn.cs" />
+    <Compile Include="Models\ColumnTypes\CityColumn.cs" />
+    <Compile Include="Models\ColumnTypes\DriversLicenseNumberColumn.cs" />
+    <Compile Include="Models\ColumnTypes\FirstNameColumn.cs" />
+    <Compile Include="Models\ColumnTypes\IDColumn.cs" />
+    <Compile Include="Models\ColumnTypes\IRandomColumnType.cs" />
+    <Compile Include="Models\ColumnTypes\LastNameColumn.cs" />
+    <Compile Include="Models\ColumnTypes\PhoneNumberColumn.cs" />
+    <Compile Include="Models\ColumnTypes\SocialSecurityNumberColumn.cs" />
+    <Compile Include="Models\ColumnTypes\StateColumn.cs" />
+    <Compile Include="Models\ColumnTypes\StreetNameColumn.cs" />
+    <Compile Include="Models\ColumnTypes\StreetNumberColumn.cs" />
+    <Compile Include="Models\ColumnTypes\ZipCodeColumn.cs" />
     <Compile Include="Models\DataBot.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataBot.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Models\RandomDataRow.cs" />
+    <Compile Include="Models\DataRow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -145,7 +163,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3560</DevelopmentServerPort>
+          <DevelopmentServerPort>15300</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

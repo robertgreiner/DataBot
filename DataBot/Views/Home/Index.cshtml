@@ -1,4 +1,5 @@
-﻿@model IEnumerable<DataBot.Models.RandomDataRow>
+﻿@model IEnumerable<DataBot.Models.DataRow>
+@using DataBot.Models
 
 @{
     ViewBag.Title = "Random Data Generator";
@@ -15,11 +16,11 @@
         function updatePreview() {
             var column = "";
             $("input:checked").each(function () {
-                column = $(this).val();
+                column = $(this).attr('name');
                 $('.' + column).show();
             });
             $('input[type=checkbox]').not(':checked').each(function () {
-                column = $(this).val();
+                column = $(this).attr('name');
                 $('.' + column).hide();
             });
         }
@@ -34,23 +35,25 @@
             <li><label for="lastName">Last Name</label><input id="lastName" name="lastName" type="checkbox" checked="checked" class="columnType" /></li>
             <li><label for="phoneNumber">Phone Number</label><input id="phoneNumber" name="phoneNumber" type="checkbox" class="columnType" /></li>
             <li><label for="birthMonth">Birth Month</label><input id="birthMonth" name="birthMonth" type="checkbox" class="columnType" /></li>
-        
+            <li><label for="id">ID</label><input id="id" name="id" type="checkbox" class="columnType" /></li>
         </ol>
         <ol class="float_left">
             <li><label for="city">City</label><input id="city" name="city" type="checkbox" checked="checked" class="columnType" /></li>
             <li><label for="state">State</label><input id="state" name="state" type="checkbox" checked="checked" class="columnType" /></li>
             <li><label for="zipCode">Zip</label><input id="zipCode" name="zipCode" type="checkbox" checked="checked" class="columnType" /></li>
             <li><label for="birthDay">Birth Day</label><input id="birthDay" name="birthDay" type="checkbox" class="columnType" /></li>
+            <li><label for="driversLicenseNumber">DL #</label><input id="driversLicesneNumber" name="driversLicenseNumber" type="checkbox" class="columnType" /></li>
         </ol>
         <ol class="float_left">
             <li><label for="streetNumber">Street Number</label><input id="streetNumber" name="streetNumber" type="checkbox" class="columnType" /></li>
             <li><label for="apartmentNumber">Apartment Number</label><input id="apartmentNumber" name="apartmentNumber" type="checkbox" class="columnType" /></li>
             <li><label for="streetName">Street Name</label><input id="streetName" name="streetName" type="checkbox" class="columnType" /></li>
             <li><label for="birthYear">Birth Year</label><input id="birthYear" name="birthYear" type="checkbox" class="columnType" /></li>
+            <li><label for="socialSecurityNumber">SSN</label><input id="socialSecurityNumber" name="socialSecurityNumber" type="checkbox" class="columnType" /></li>
         </ol>
         <div class="clear"></div>
         <div style="width: 370px; margin: 5px auto;">
-            <label for="numRows" class="rows">Number of rows to export </label><input type="text" id="numRows" name="numRows" maxlength="4" />
+            <label for="numRows" class="rows">Number of rows to export </label><input type="text" id="numRows" name="numRows" maxlength="4" value="10" />
         </div>
         <div class="clear"></div>
     </fieldset>
@@ -64,11 +67,20 @@
 <h2>Sample Rows</h2>
 <table style="width: 99%; background-color: rgb(209, 209, 209);">
     <tr class="th">
+        <th class="id">
+            ID
+        </th>
         <th class="firstName">
             First Name
         </th>
         <th class="lastName">
             Last Name
+        </th>
+        <th class="driversLicenseNumber">
+            DL #
+        </th>
+        <th class="socialSecurityNumber">
+            SSN
         </th>
         <th class="city">
             City
@@ -104,41 +116,50 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td class="id">
+            @item.Columns[ColumnNames.ID].Value
+        </td>
         <td class="firstName">
-            @item.FirstName
+            @item.Columns[ColumnNames.FirstName].Value
         </td>
         <td class="lastName">
-            @item.LastName
+            @item.Columns[ColumnNames.LastName].Value
+        </td>
+        <td class="driversLicenseNumber">
+            @item.Columns[ColumnNames.DriversLicenseNumber].Value
+        </td>
+        <td class="socialSecurityNumber">
+            @item.Columns[ColumnNames.SocialSecurityNumber].Value
         </td>
         <td class="city">
-            @item.City
+            @item.Columns[ColumnNames.City].Value
         </td>
         <td class="state">
-            @item.State
+            @item.Columns[ColumnNames.State].Value
         </td>
         <td class="streetName">
-            @item.StreetName
+            @item.Columns[ColumnNames.StreetName].Value
         </td>
         <td class="streetNumber">
-            @item.StreetNumber
+            @item.Columns[ColumnNames.StreetNumber].Value
         </td>
         <td class="apartmentNumber">
-            @item.ApartmentNumber
+            @item.Columns[ColumnNames.ApartmentNumber].Value
         </td>
         <td class="zipCode">
-            @item.ZipCode
+            @item.Columns[ColumnNames.ZipCode].Value
         </td>
         <td class="phoneNumber">
-            @item.PhoneNumber
+            @item.Columns[ColumnNames.PhoneNumber].Value
         </td>
         <td class="birthYear">
-            @item.BirthYear
+            @item.Columns[ColumnNames.BirthYear].Value
         </td>
         <td class="birthMonth">
-            @item.BirthMonth
+            @item.Columns[ColumnNames.BirthMonth].Value
         </td>
         <td class="birthDay">
-            @item.BirthDay
+            @item.Columns[ColumnNames.BirthDay].Value
         </td>
     </tr>
 }
