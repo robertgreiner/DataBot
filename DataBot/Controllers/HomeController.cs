@@ -8,6 +8,8 @@ using System.Xml.Linq;
 using System.IO;
 using System.Text;
 using DataBot.Models.ColumnTypes;
+using System.Data.Linq;
+using System.Reflection;
 
 namespace DataBot.Controllers
 {
@@ -31,9 +33,9 @@ namespace DataBot.Controllers
             string result = string.Empty;
 
             if (exportType.Equals("SQL")) {
-                //result = GenerateSQL(randomDataRows);
+                result = GenerateSQL(randomDataRows);
             } else if (exportType.Equals("CSV")) {
-                //result = GenerateCSV(randomDataRows);
+                result = GenerateCSV(randomDataRows);
             } else {
                 result = GenerateXML(randomDataRows).ToString();
             }
@@ -135,12 +137,30 @@ namespace DataBot.Controllers
         }
 
         private string GenerateCSV(List<DataRow> rows) {
+            StringBuilder csv = new StringBuilder();
+            var result = from r in rows
+                         select r.Columns.Values.Aggregate(
+                            new StringBuilder(), 
+                            (sb, s) => sb.AppendFormat("{0},", s.Value));
 
-            return string.Empty;
+            foreach (StringBuilder row in result) {
+                csv.AppendLine(row.ToString().TrimEnd(new char[] {','}));
+            }
+            return csv.ToString();
         }
 
         private string GenerateSQL(List<DataRow> rows) {
-            return string.Empty;
+            var constr = @"Data Source=NOTEBOOK\SQLEXPRESS;Initial Catalog=DemoDataContext;Integrated Security=True";
+            var context = new DataContext(constr);
+            var typeName = "System.Data.Linq.SqlClient.SqlBuilder";
+            var type = typeof(DataContext).Assembly.GetType(typeName);
+            var metaTable = context.Mapping.GetTable(typeof(DataTable));
+
+            //Remove columns from the metaTable?
+
+            var flags = BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.InvokeMethod;
+            var sql = type.InvokeMember("GetCreateTableCommand", flags, null, null, new[] { metaTable });
+            return sql.ToString();
         }
     }
 }
