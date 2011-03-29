@@ -49,15 +49,15 @@ namespace DataBot.Controllers
 
             for (int x = 0; x < numRows; x++) {
                 DataRow row = new DataRow();
+                row.AddColumn(new IDColumn());
+                row.AddColumn(new FirstNameColumn());
+                row.AddColumn(new LastNameColumn());
                 row.AddColumn(new ApartmentNumberColumn());
                 row.AddColumn(new BirthDayColumn());
                 row.AddColumn(new BirthMonthColumn());
                 row.AddColumn(new BirthYearColumn());
                 row.AddColumn(new CityColumn());
                 row.AddColumn(new DriversLicenseNumberColumn());
-                row.AddColumn(new FirstNameColumn());
-                row.AddColumn(new IDColumn());
-                row.AddColumn(new LastNameColumn());
                 row.AddColumn(new PhoneNumberColumn());
                 row.AddColumn(new SocialSecurityNumberColumn());
                 row.AddColumn(new StateColumn());
@@ -75,6 +75,15 @@ namespace DataBot.Controllers
 
             for (int x = 0; x < numRows; x++) {
                 DataRow row = new DataRow();
+                if (collection["id"] != null) {
+                    row.AddColumn(new IDColumn());
+                }
+                if (collection["firstName"] != null) {
+                    row.AddColumn(new FirstNameColumn());
+                }
+                if (collection["lastName"] != null) {
+                    row.AddColumn(new LastNameColumn());
+                }
                 if (collection["apartmentNumber"] != null) {
                     row.AddColumn(new ApartmentNumberColumn());
                 }
@@ -92,16 +101,7 @@ namespace DataBot.Controllers
                 } 
                 if (collection["driversLicenseNumber"] != null) {
                     row.AddColumn(new DriversLicenseNumberColumn());
-                } 
-                if (collection["firstName"] != null) {
-                    row.AddColumn(new FirstNameColumn());
-                } 
-                if (collection["id"] != null) {
-                    row.AddColumn(new IDColumn());
-                } 
-                if (collection["lastName"] != null) {
-                    row.AddColumn(new LastNameColumn());
-                } 
+                }  
                 if (collection["phoneNumber"] != null) {
                     row.AddColumn(new PhoneNumberColumn());
                 } 
@@ -150,16 +150,28 @@ namespace DataBot.Controllers
         }
 
         private string GenerateSQL(List<DataRow> rows) {
-            var constr = @"Data Source=NOTEBOOK\SQLEXPRESS;Initial Catalog=DemoDataContext;Integrated Security=True";
-            var context = new DataContext(constr);
-            var typeName = "System.Data.Linq.SqlClient.SqlBuilder";
-            var type = typeof(DataContext).Assembly.GetType(typeName);
-            var metaTable = context.Mapping.GetTable(typeof(DataTable));
+            StringBuilder sql = new StringBuilder();
 
-            //Remove columns from the metaTable?
+            var columns = (from r in rows
+                           select r.Columns.Values.Aggregate(
+                           new StringBuilder(),
+                           (sb, s) => sb.AppendFormat("{0},", s.ColumnName))).Take(1);
 
-            var flags = BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.InvokeMethod;
-            var sql = type.InvokeMember("GetCreateTableCommand", flags, null, null, new[] { metaTable });
+            string columnNames = columns.First().ToString().TrimEnd(new char[] { ',' });
+
+            var values = from r in rows
+                         select r.Columns.Values.Aggregate(
+                            new StringBuilder(),
+                            (sb, s) => sb.AppendFormat("'{0}',", s.Value));
+
+            foreach (StringBuilder row in values) {
+                sql.Append("INSERT INTO users (");
+                sql.Append(columnNames);
+                sql.Append(") VALUES (");
+                sql.Append(row.ToString().TrimEnd(new char[] { ',' }));
+                sql.AppendLine(");");
+            }
+
             return sql.ToString();
         }
     }
