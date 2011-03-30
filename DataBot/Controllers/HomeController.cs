@@ -27,7 +27,17 @@ namespace DataBot.Controllers
          * content. */
         [HttpPost]
         public ActionResult Index(FormCollection collection) {
-            int numRows = Convert.ToInt32(collection["numRows"]);
+
+            int numRows = 0;
+            try {
+                numRows = Convert.ToInt32(collection["numRows"]);
+                if (numRows > 1000) {
+                    numRows = 1000;
+                }
+            } catch (Exception) {
+                numRows = 10;
+            }
+
             string exportType = collection["export"];
             List<DataRow> randomDataRows = GenerateRows(numRows, collection);
             string result = string.Empty;

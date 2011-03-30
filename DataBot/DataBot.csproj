@@ -66,7 +66,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ColumnNames.cs" />
-    <Compile Include="Models\DataTable.cs" />
     <Compile Include="Models\PartialContext.cs" />
     <Compile Include="Models\ColumnTypes\ApartmentNumberColumn.cs" />
     <Compile Include="Models\ColumnTypes\BirthDayColumn.cs" />
