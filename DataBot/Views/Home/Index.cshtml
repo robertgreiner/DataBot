@@ -31,25 +31,25 @@
     <fieldset>
         <legend>Add or Remove Columns</legend>
         <ol class="float_left">
+            <li><label for="id">ID</label><input id="id" name="id" type="checkbox" checked="checked" class="columnType" /></li>
             <li><label for="firstName">First Name</label><input id="firstName" name="firstName" type="checkbox" checked="checked" class="columnType" /></li>
             <li><label for="lastName">Last Name</label><input id="lastName" name="lastName" type="checkbox" checked="checked" class="columnType" /></li>
             <li><label for="phoneNumber">Phone Number</label><input id="phoneNumber" name="phoneNumber" type="checkbox" class="columnType" /></li>
             <li><label for="birthMonth">Birth Month</label><input id="birthMonth" name="birthMonth" type="checkbox" class="columnType" /></li>
-            <li><label for="id">ID</label><input id="id" name="id" type="checkbox" class="columnType" /></li>
         </ol>
         <ol class="float_left">
             <li><label for="city">City</label><input id="city" name="city" type="checkbox" checked="checked" class="columnType" /></li>
             <li><label for="state">State</label><input id="state" name="state" type="checkbox" checked="checked" class="columnType" /></li>
             <li><label for="zipCode">Zip</label><input id="zipCode" name="zipCode" type="checkbox" checked="checked" class="columnType" /></li>
-            <li><label for="birthDay">Birth Day</label><input id="birthDay" name="birthDay" type="checkbox" class="columnType" /></li>
             <li><label for="driversLicenseNumber">DL #</label><input id="driversLicesneNumber" name="driversLicenseNumber" type="checkbox" class="columnType" /></li>
+            <li><label for="birthDay">Birth Day</label><input id="birthDay" name="birthDay" type="checkbox" class="columnType" /></li>
         </ol>
         <ol class="float_left">
             <li><label for="streetNumber">Street Number</label><input id="streetNumber" name="streetNumber" type="checkbox" class="columnType" /></li>
-            <li><label for="apartmentNumber">Apartment Number</label><input id="apartmentNumber" name="apartmentNumber" type="checkbox" class="columnType" /></li>
             <li><label for="streetName">Street Name</label><input id="streetName" name="streetName" type="checkbox" class="columnType" /></li>
-            <li><label for="birthYear">Birth Year</label><input id="birthYear" name="birthYear" type="checkbox" class="columnType" /></li>
+            <li><label for="apartmentNumber">Apartment Number</label><input id="apartmentNumber" name="apartmentNumber" type="checkbox" class="columnType" /></li>
             <li><label for="socialSecurityNumber">SSN</label><input id="socialSecurityNumber" name="socialSecurityNumber" type="checkbox" class="columnType" /></li>
+            <li><label for="birthYear">Birth Year</label><input id="birthYear" name="birthYear" type="checkbox" class="columnType" /></li>
         </ol>
         <div class="clear"></div>
         <div style="width: 370px; margin: 5px auto;">
@@ -88,14 +88,14 @@
         <th class="state">
             State
         </th>
+        <th class="streetNumber">
+            Street #
+        </th>
         <th class="streetName">
             Street
         </th>
-        <th class="streetNumber">
-            Street Number
-        </th>
         <th class="apartmentNumber">
-            Apartment Number
+            Apt #
         </th>
         <th class="zipCode">
             Zip
@@ -137,11 +137,11 @@
         <td class="state">
             @item.Columns[ColumnNames.State].Value
         </td>
+         <td class="streetNumber">
+            @item.Columns[ColumnNames.StreetNumber].Value
+        </td>
         <td class="streetName">
             @item.Columns[ColumnNames.StreetName].Value
-        </td>
-        <td class="streetNumber">
-            @item.Columns[ColumnNames.StreetNumber].Value
         </td>
         <td class="apartmentNumber">
             @item.Columns[ColumnNames.ApartmentNumber].Value

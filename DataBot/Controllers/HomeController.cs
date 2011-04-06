@@ -62,7 +62,6 @@ namespace DataBot.Controllers
                 row.AddColumn(new IDColumn());
                 row.AddColumn(new FirstNameColumn());
                 row.AddColumn(new LastNameColumn());
-                row.AddColumn(new ApartmentNumberColumn());
                 row.AddColumn(new BirthDayColumn());
                 row.AddColumn(new BirthMonthColumn());
                 row.AddColumn(new BirthYearColumn());
@@ -71,8 +70,9 @@ namespace DataBot.Controllers
                 row.AddColumn(new PhoneNumberColumn());
                 row.AddColumn(new SocialSecurityNumberColumn());
                 row.AddColumn(new StateColumn());
-                row.AddColumn(new StreetNameColumn());
                 row.AddColumn(new StreetNumberColumn());
+                row.AddColumn(new StreetNameColumn());
+                row.AddColumn(new ApartmentNumberColumn());
                 row.AddColumn(new ZipCodeColumn());
                 rows.Add(row);
             }
@@ -93,9 +93,6 @@ namespace DataBot.Controllers
                 }
                 if (collection["lastName"] != null) {
                     row.AddColumn(new LastNameColumn());
-                }
-                if (collection["apartmentNumber"] != null) {
-                    row.AddColumn(new ApartmentNumberColumn());
                 }
                 if (collection["birthDay"] != null) {
                     row.AddColumn(new BirthDayColumn());
@@ -120,13 +117,16 @@ namespace DataBot.Controllers
                 } 
                 if (collection["state"] != null) {
                     row.AddColumn(new StateColumn());
-                } 
-                if (collection["streetName"] != null) {
-                    row.AddColumn(new StreetNameColumn());
-                } 
+                }
                 if (collection["streetNumber"] != null) {
                     row.AddColumn(new StreetNumberColumn());
                 } 
+                if (collection["streetName"] != null) {
+                    row.AddColumn(new StreetNameColumn());
+                }
+                if (collection["apartmentNumber"] != null) {
+                    row.AddColumn(new ApartmentNumberColumn());
+                }
                 if (collection["zipCode"] != null) {
                     row.AddColumn(new ZipCodeColumn());
                 }
